@@ -4,6 +4,7 @@
 
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
+#include <string>
 
 /**
  * BinaryTree class
@@ -27,10 +28,75 @@ class BinaryTree
 
     Node* root;
 
-    //TODO A function theat take a node and finds if it's children are the one to be removed
-    // Returns a boolean if found and removed
+    /**
+     * Node finder
+     * @param node Starting node
+     * @param value The value to be found
+     * @param action what to do with the result (find = return node, remove = return parent node)
+     * @return found node
+     */
+    Node* nodeFinder(Node* node, const int value, const std::string& action = "find")
+    {
+        Node* found = nullptr;
+
+        if(value < node->data && node->left != nullptr)
+        {
+            if(node->left->data == value)
+            {
+                found = (action =="find")? node->left : node;
+            }
+            else
+            {
+                found = nodeFinder(node->left, value, action);
+            }
+        }
+        else if(node->right != nullptr)
+        {
+            if(node->right->data == value)
+            {
+                found = (action =="find")? node->right : node;
+            }
+            else
+            {
+                found = nodeFinder(node->right, value, action);
+            }
+        }
+
+
+        return found;
+    }
 
     //TODO a function to shift a removed nodes children to a different branch
+    bool removeNode(Node* node, const std::string& side)
+    {
+        bool removed = false;
+
+        if(node != nullptr)
+        {
+            Node* toBeRemoved = (side == "left") ? node->left : node->right;
+            Node* replacement = toBeRemoved->left;
+
+            // if(replacement != nullptr)
+            // {
+            //     while (replacement->left != nullptr)
+            //     {
+            //         replacement = replacement->left;
+            //     }
+            //     (side == "left")?node->left = replacement : node->right = replacement;
+            //
+            //     if(toBeRemoved->left != replacement)
+            //     {
+            //         replacement->left = toBeRemoved->left;
+            //     }
+            //
+            //     replacement->right = toBeRemoved->right;
+            // }
+        }
+
+
+
+        return removed;
+    }
 
 public:
     /**
@@ -107,20 +173,12 @@ public:
      */
     bool remove(const int value)
     {
-        bool removed =  false;
-
         Node* current = root;
         if(root!= nullptr)
         {
             //Todo: recursive call to the private removal function which assigns return to removed variable
         }
-        // while(current != nullptr && !removed)
-        // {
-        //     if(current->data == value)
-        //     {
-        //         // if(current->left == nullptr && current->right == nullptr)
-        //     }
-        // }
+
 
         return removed;
     }
