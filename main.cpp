@@ -4,6 +4,7 @@
 #include <fstream>
 #include "CurrentTime.h"
 #include "LinkedList.h"
+#include "TestFunctions.h"
 
 
 int main()
@@ -60,6 +61,10 @@ int main()
     list.add(66);
 
     std::cout << "\nList:\n" << list.toString() << std::endl;
+
+    int arr[4] = {1,5,2,8};
+
+    std::cout << "Found: " << binarySearch(arr, 1) << "\nNot found: " << binarySearch(arr, 5) << std::endl;
 
 
     return 0;
