@@ -5,24 +5,33 @@
 #ifndef TESTFUNCTIONS_H
 #define TESTFUNCTIONS_H
 
-inline int binarySearch(const int arr[], const int value)
+inline int binarySearch(const int arr[], int arraysize, const int value)
 {
-    constexpr int arrSize = sizeof(arr);
     int x = 0;
-    int y = arrSize-1;
+    int y = arraysize-1;
     int found = -1;
 
     while(found<0 && x<=y)
     {
         int middle = (y + x) / 2;
-        // std::cout << "current: " << arr[middle] << std::endl;
+        // std::cout << "\ncurrent: " << arr[middle] <<"\t"<< middle <<std::endl;
 
         if(arr[middle] == value) found = middle;
-        else if(arr[middle] < value) y = middle-1;
+        else if(arr[middle] > value) y = middle-1;
         else x = middle+1;
     }
 
     return found;
+}
+
+
+inline void printArray(int arraySet[], int size)
+{
+    std::cout << "\nThe array:\n";
+    for (int i = 0; i < size; ++i) {
+        std::cout << arraySet[i] << "\t";
+    }
+    std::cout << "\n\n";
 }
 
 #endif //TESTFUNCTIONS_H

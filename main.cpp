@@ -5,6 +5,7 @@
 #include "CurrentTime.h"
 #include "LinkedList.h"
 #include "TestFunctions.h"
+#include "Sorting.h"
 
 
 int main()
@@ -62,10 +63,18 @@ int main()
 
     std::cout << "\nList:\n" << list.toString() << std::endl;
 
-    int arr[4] = {1,5,2,8};
+    int arr[5] = {1,2,3,5,8};
 
-    std::cout << "Found: " << binarySearch(arr, 1) << "\nNot found: " << binarySearch(arr, 5) << std::endl;
+    std::cout << "Found index: " << binarySearch(arr,5, 3) <<
+        "\nNot found: " << binarySearch(arr, 5, 4) << std::endl;
 
+
+    int dataSet[7] = {2,9,5,4,8,1,6};
+
+    //TODO: FIx insertion sort
+    insertion(dataSet, 7);
+
+    printArray(dataSet,7);
 
     return 0;
 }
