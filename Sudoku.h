@@ -17,7 +17,9 @@ inline void printPuzzle(int puzzle[][9], int size = 9)
         }
         std::cout << "\n";
     }
-    std::cout << "-----------------\n";
+	
+	
+    std::cout << "--------------\n";
 }
 
 #endif //SUDOKU_H
