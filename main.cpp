@@ -91,7 +91,7 @@ int main()
 
     int zeros[81][2];
 
-    int cells = freeCells(puzzle, zeros);
+    const int cells = freeCells(puzzle, zeros);
 
     printPuzzle(puzzle);
     std::cout << "Free cells : " << cells <<"\n";
