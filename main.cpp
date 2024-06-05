@@ -89,7 +89,12 @@ int main()
         {0, 0, 0, 0, 8, 0, 0, 7, 9}
     };
 
+    int zeros[81][2];
+
+    int cells = freeCells(puzzle, zeros);
+
     printPuzzle(puzzle);
+    std::cout << "Free cells : " << cells <<"\n";
 
     return 0;
 }

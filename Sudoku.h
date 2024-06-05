@@ -7,6 +7,26 @@
 
 // Printing the Sudoku grid
 
+inline int freeCells(int puzzle[9][9] , int freeCells[81][2])
+{
+    int cells = 0;
+
+    for (int i = 0; i<9; i++)
+    {
+        for (int x = 0; x<9; x++)
+        {
+            if(puzzle[i][x] == 0)
+            {
+                freeCells[cells][0] = i;
+                freeCells[cells][1] = x;
+                cells++;
+            }
+        }
+    }
+
+    return cells;
+}
+
 inline void printPuzzle(int puzzle[][9], int size = 9)
 {
     std::cout << "-----------------\n";
