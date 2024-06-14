@@ -7,6 +7,8 @@
 #include "TestFunctions.h"
 #include "Sorting.h"
 #include "Sudoku.h"
+#include "dungeonBFS.h"
+
 
 
 int main()
@@ -95,6 +97,9 @@ int main()
 
     printPuzzle(puzzle);
     std::cout << "Free cells : " << cells <<"\n";
+
+
+    initializeQueues();
 
     return 0;
 }
