@@ -34,4 +34,20 @@ inline void printArray(int arraySet[], int size)
     std::cout << "\n\n";
 }
 
+template <typename T, size_t rows, size_t cols>
+void print2DArray(const T (&arraySet)[rows][cols])
+{
+    std::cout << "\n\n\n-----------------\n";
+    for (int i = 0; i<rows; i++) {
+
+        for (const T val : arraySet[i]) {
+            std::cout << val << " ";
+        }
+        std::cout << "\n";
+    }
+
+
+    std::cout << "--------------\n";
+}
+
 #endif //TESTFUNCTIONS_H

@@ -55,29 +55,29 @@ int main()
     list.add(6);
     list.add(1);
 
-    try{list.removeFirst();}
-    catch (std::invalid_argument& e)
-    {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
-    list.add(62);
-    list.add(5);
-    list.add(66);
+    // try{list.removeFirst();}
+    // catch (std::invalid_argument& e)
+    // {
+    //     std::cerr << "Error: " << e.what() << std::endl;
+    // }
+    // list.add(62);
+    // list.add(5);
+    // list.add(66);
 
-    std::cout << "\nList:\n" << list.toString() << std::endl;
+    // std::cout << "\nList:\n" << list.toString() << std::endl;
 
     int arr[5] = {1,2,3,5,8};
 
-    std::cout << "Found index: " << binarySearch(arr,5, 3) <<
-        "\nNot found: " << binarySearch(arr, 5, 4) << std::endl;
+    // std::cout << "Found index: " << binarySearch(arr,5, 3) <<
+        // "\nNot found: " << binarySearch(arr, 5, 4) << std::endl;
 
 
     int dataSet[7] = {2,9,5,4,8,1,6};
 
     //TODO: FIx insertion sort
-    insertion(dataSet, 7);
+    // insertion(dataSet, 7);
 
-    printArray(dataSet,7);
+    // printArray(dataSet,7);
 
     int puzzle[9][9] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},
@@ -93,13 +93,13 @@ int main()
 
     int zeros[81][2];
 
-    const int cells = freeCells(puzzle, zeros);
+    // const int cells = freeCells(puzzle, zeros);
 
-    printPuzzle(puzzle);
-    std::cout << "Free cells : " << cells <<"\n";
+    // printPuzzle(puzzle);
+    // std::cout << "Free cells : " << cells <<"\n";
 
-
-    initializeQueues();
+    bfs(grid);
+    print2DArray(grid);
 
     return 0;
 }
